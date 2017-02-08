@@ -11,7 +11,7 @@ int main() {
 
     int total_service_time = 240; //8点到12点的服务时间 换成分钟
     int window_num = 4; //窗口数量
-    int simulate_num = 10000;
+    int simulate_num = 100000;
 
 
 /*    *//*Queue test*//*

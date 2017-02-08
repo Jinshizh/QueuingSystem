@@ -51,7 +51,9 @@ void QueueSystem::customerArrived() {
     ++total_customer_num;
 
     //创建下一个顾客到达的事件，注意不是在模拟一开始就将一整天的时间全都创建好的
-    int inter_time = Random::uniform(100);
+    //int inter_time = Random::uniform(100);
+    // 下一个顾客到达的时间间隔，假设平均每分钟到两个顾客，则据排队理论，平均间隔时间服从参数为 2 的泊松
+    int inter_time = Random::getRandom(POISSON, 0.5);
     Event event(inter_time + current_event->occur_time);
 
     if(event.occur_time < total_service_time)
